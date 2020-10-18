@@ -1,0 +1,54 @@
+.team-history {
+  overflow-y: auto;
+  max-height: 100vh;
+  border: 2px solid $primary-black;
+}
+
+.team-history input {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+.team-history input {
+  font-size: $font-m;
+  font-weight: $font-semibold;
+  text-transform: uppercase;
+  text-align: center;
+  height: 42px;
+  width: 100%;
+}
+
+.team-history input::placeholder {
+  color: #fff;
+}
+
+.team-history .team-name {
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 10px rgba($color: #000000, $alpha: 0.7);
+  width: 100%;
+}
+
+.team-history.home {
+  background-color: lighten($color: $primary-blue, $amount: 10%);
+  border-right: 1px solid $primary-black;
+  .team-name {
+    border-bottom: 2px solid $primary-blue;
+    background-color: $primary-blue;
+  }
+}
+
+.team-history.visitor {
+  background-color: lighten($color: $primary-red, $amount: 20%);
+  border-left: 1px solid $primary-black;
+  .team-name {
+    border-bottom: 2px solid $primary-red;
+    background-color: $primary-red;
+  }
+}

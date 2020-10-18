@@ -1,0 +1,91 @@
+.team-score {
+  display: inline-block;
+  overflow-y: auto;
+  max-height: calc(100vh - 98px);
+  margin: -4px 0 0 0;
+}
+
+.team-score:nth-child(2) {
+  margin-top: 0;
+}
+
+.team-score:last-child {
+  margin-bottom: calc(100vh - 296px);
+}
+
+.team-score.done {
+  background-color: rgba($color: #000000, $alpha: 0.15);
+}
+
+.team-score .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.team-score .row input {
+  border: none;
+  font-style: normal;
+}
+
+.team-score .row {
+  border-bottom: 2px solid;
+}
+
+// Home
+.home {
+  .row {
+    border-color: $primary-blue;
+  }
+  .team-score {
+    .row input:first-child {
+      border-right: 1px solid $primary-blue;
+    }
+    .row input:last-child {
+      border-left: 1px solid $primary-blue;
+    }
+  }
+  .total-score {
+    border-bottom: 2px solid $primary-blue;
+    color: #fff;
+  }
+  .set-winner {
+    background-color: $primary-blue;
+  }
+}
+
+// Visitor
+.visitor {
+  .row {
+    border-color: $primary-red;
+  }
+  .team-score {
+    .row input:first-child {
+      border-right: 1px solid $primary-red;
+    }
+    .row input:last-child {
+      border-left: 1px solid $primary-red;
+    }
+  }
+  .total-score {
+    color: #fff;
+    border-bottom: 2px solid $primary-red;
+  }
+  .set-winner {
+    background-color: $primary-red;
+  }
+}
+
+.team-score .set-winner,
+.total-score {
+  text-align: center;
+  padding: 12px;
+  width: 100%;
+  color: #ffffff;
+  font-weight: $font-bold;
+}
+
+.total-score {
+  background-color: transparent;
+  font-size: $font-l;
+  font-weight: $font-bold;
+}

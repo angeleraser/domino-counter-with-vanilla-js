@@ -1,0 +1,18 @@
+.game-sheet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  max-width: 580px;
+  max-height: 768px;
+  width: 100%;
+}
+
+.game-sheet .set-count {
+  font-weight: $font-bold;
+  font-size: $font-l;
+  padding: 26px;
+  text-align: center;
+  top: 0;
+  text-transform: uppercase;
+  width: 100%;
+}

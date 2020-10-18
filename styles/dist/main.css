@@ -1,0 +1,155 @@
+.game-sheet {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  max-width: 580px;
+  max-height: 768px;
+  width: 100%;
+}
+
+.game-sheet .set-count {
+  font-weight: 700;
+  font-size: 20px;
+  padding: 26px;
+  text-align: center;
+  top: 0;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.team-history {
+  overflow-y: auto;
+  max-height: 100vh;
+  border: 2px solid #050505;
+}
+
+.team-history input {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+}
+.team-history input:focus {
+  outline: none;
+}
+
+.team-history input {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  height: 42px;
+  width: 100%;
+}
+
+.team-history input::placeholder {
+  color: #fff;
+}
+
+.team-history .team-name {
+  display: flex;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+  width: 100%;
+}
+
+.team-history.home {
+  background-color: #3372ff;
+  border-right: 1px solid #050505;
+}
+.team-history.home .team-name {
+  border-bottom: 2px solid #004fff;
+  background-color: #004fff;
+}
+
+.team-history.visitor {
+  background-color: #cb586f;
+  border-left: 1px solid #050505;
+}
+.team-history.visitor .team-name {
+  border-bottom: 2px solid #902d41;
+  background-color: #902d41;
+}
+
+.team-score {
+  display: inline-block;
+  overflow-y: auto;
+  max-height: calc(100vh - 98px);
+  margin: -4px 0 0 0;
+}
+
+.team-score:nth-child(2) {
+  margin-top: 0;
+}
+
+.team-score:last-child {
+  margin-bottom: calc(100vh - 296px);
+}
+
+.team-score.done {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.team-score .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.team-score .row input {
+  border: none;
+  font-style: normal;
+}
+
+.team-score .row {
+  border-bottom: 2px solid;
+}
+
+.home .row {
+  border-color: #004fff;
+}
+.home .team-score .row input:first-child {
+  border-right: 1px solid #004fff;
+}
+.home .team-score .row input:last-child {
+  border-left: 1px solid #004fff;
+}
+.home .total-score {
+  border-bottom: 2px solid #004fff;
+  color: #fff;
+}
+.home .set-winner {
+  background-color: #004fff;
+}
+
+.visitor .row {
+  border-color: #902d41;
+}
+.visitor .team-score .row input:first-child {
+  border-right: 1px solid #902d41;
+}
+.visitor .team-score .row input:last-child {
+  border-left: 1px solid #902d41;
+}
+.visitor .total-score {
+  color: #fff;
+  border-bottom: 2px solid #902d41;
+}
+.visitor .set-winner {
+  background-color: #902d41;
+}
+
+.team-score .set-winner,
+.total-score {
+  text-align: center;
+  padding: 12px;
+  width: 100%;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.total-score {
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: 700;
+}

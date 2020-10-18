@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/dist/main.css" />
+    <link rel="stylesheet" href="./styles/reset.min.css" />
+    <title>Domino Counter</title>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Sheet Container  -->
+      <div class="game-sheet">
+        <!-- Home team  -->
+        <div id="home-team" class="team-history home">
+          <!-- Team Name  -->
+          <div class="team-name">
+            <input class="name" type="text" placeholder="HOME" />
+          </div>
+          <div data-team-score="1" class="team-score">
+            <div class="total-score">Total: 0</div>
+            <label class="row">
+              <input type="number" data-column="1" />
+              <input type="number" data-column="2" />
+            </label>
+          </div>
+        </div>
+        <!-- Visitor Team  -->
+        <div id="visitor-team" class="team-history visitor">
+          <!-- Team Name  -->
+          <div class="team-name">
+            <input class="name" type="text" placeholder="VISITOR" />
+          </div>
+          <div data-team-score="2" class="team-score">
+            <!-- Total Score -->
+            <div class="total-score">Total: 0</div>
+            <label class="row">
+              <input type="number" data-column="1" />
+              <input type="number" data-column="2" />
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/Row.js"></script>
+    <script type="module" src="./js/GameSet.js"></script>
+    <script type="module" src="./js/index.js"></script>
+  </body>
+</html>
