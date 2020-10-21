@@ -1,5 +1,11 @@
 import { insertAfter, gameMaxScore } from "./main.js";
-import { addNewGameSetHTML, createWinLabelHTML } from "./GameSet.js";
+import {
+  addNewGameSetHTML,
+  createWinLabelHTML,
+  getLastGameSet,
+  resetInputValues,
+  getLosser,
+} from "./GameSet.js";
 
 const indexGenerator = function* () {
   let i = 2;
@@ -8,7 +14,7 @@ const indexGenerator = function* () {
   }
 };
 const gen = indexGenerator();
-
+const teams = ["home", "visitor"];
 const getTotalScore = (values) => values.reduce((sum, val) => sum + val, 0);
 
 const getSetResults = (table) => {
@@ -85,15 +91,20 @@ const updateGameState = (table) => {
         removeEmptyRows(table);
       else if (
         totalScore >= gameMaxScore &&
-        !table.classList.contains("done") 
+        !table.classList.contains("done")
       ) {
-        const lastRow = allRows[allRows.length - 1];
+        const lastRow = allRows[allRows.length - 1],
+          winnerName = table.parentNode.classList.contains("home")
+            ? "home"
+            : "visitor",
+          losser = getLosser(winnerName);
         getInputFields(table).htmlElements.forEach((input) => {
           input.setAttribute("disabled", true);
         });
         insertAfter(createWinLabelHTML(), lastRow);
         table.classList.add("done");
         addNewGameSetHTML(table);
+        resetInputValues(getLastGameSet(losser));
       }
     }
   };

@@ -1,5 +1,5 @@
 import { insertAfter } from "./main.js";
-import { createNewRowHTML} from "./Row.js";
+import { createNewRowHTML } from "./Row.js";
 const indexGenerator = function* () {
   let i = 2;
   while (i) {
@@ -41,4 +41,23 @@ const createWinLabelHTML = () => {
   return div;
 };
 
-export { addNewGameSetHTML, createWinLabelHTML };
+const getLastGameSet = (parent) => {
+  const list = Array.from(parent.querySelectorAll(".team-score")),
+    lastSet = list[list.length - 1];
+  return lastSet;
+};
+
+const resetInputValues = (wrapper) => {
+  const inputs = Array.from(wrapper.querySelectorAll("[data-column]"));
+  for (const input of inputs) {
+    input.value = "";
+  }
+};
+
+const getLosser = (name) => {
+  const home = document.querySelector(".home"),
+    visitor = document.querySelector(".visitor");
+  return name === "home" ? visitor : home;
+};
+
+export { addNewGameSetHTML, createWinLabelHTML, getLastGameSet, getLosser, resetInputValues };
